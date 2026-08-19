@@ -4,6 +4,8 @@ def calc_sum(a,b):
     return a+b
 
 print(calc_sum(11,22))
+if __name__ == "__main__":
+    print("unit7 测试")
 
 #2.多返回值
 def get_min_max(lst):
