@@ -18,3 +18,4 @@ for v in data:
         break
 else:
     print("遍历完")
+    pass# 啥也不干，仅仅满足语法，占位

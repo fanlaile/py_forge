@@ -42,3 +42,40 @@ print(next(it))
 print(next(it))
 print(next(it))
 
+
+def even_gen(max_num):
+    for n in range(max_num):
+        if n % 2 == 0:
+            yield n
+print("test 1:")
+g = even_gen(10)
+for num in g:
+    print(num)
+
+print("test 2:")
+src = [5,22,13,35,8,41,19]
+# 使用列表推导式完成
+res = [i for i in src if i > 20]
+print(res) # [22,35,41]
+
+print("test 3:")
+def check_args(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        for i in args:
+            if i < 0:
+                print("参数不能为负数")
+                return
+        else:
+            res = func(*args, **kwargs)
+            return res
+    return wrapper
+
+@check_args
+def calc(a,b):
+    return a + b
+
+print(calc(10,20))  #30
+print(calc(-5, 8))  #打印：参数不能为负数，无返回
+
+
